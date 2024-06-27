@@ -50,8 +50,8 @@ class _InputLoginState extends State<InputLogin> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextInLogin(signUp: "Gmail".tr()),
+                padding: const EdgeInsets.all(9),
+                child: TextInLogin(signUp: "gmail".tr()),
               ),
               TextFormField(
                 controller: _editingControllerUser,
@@ -69,7 +69,7 @@ class _InputLoginState extends State<InputLogin> {
                 // onFieldSubmitted: (value) =>
                 //     Focus.of(context).requestFocus(_focusPass),
                 decoration: InputDecoration(
-                  hintText: "Type your Mail".tr(),
+                  hintText: "typeYourMail".tr(),
                   prefixIcon: const Icon(
                     Icons.person,
                     color: Color.fromARGB(255, 112, 95, 95),
@@ -77,8 +77,8 @@ class _InputLoginState extends State<InputLogin> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(10),
-                child: TextInLogin(signUp: "Password".tr()),
+                padding: const EdgeInsets.all(9),
+                child: TextInLogin(signUp: "password".tr()),
               ),
               TextFormField(
                 controller: _editingControllerPassword,
@@ -92,7 +92,7 @@ class _InputLoginState extends State<InputLogin> {
                   );
                 },
                 decoration: InputDecoration(
-                  hintText: "Type your Password".tr(),
+                  hintText: "typeYourPassword".tr(),
                   prefixIcon: const Icon(
                     Icons.lock,
                     color: Color.fromARGB(255, 112, 95, 95),
@@ -118,9 +118,9 @@ class _InputLoginState extends State<InputLogin> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(bottom: 20, top: 8),
+          padding: const EdgeInsets.only(bottom: 20, top: 6),
           child: TextInLogin(
-            signUp: "Forgot Password?".tr(),
+            signUp: "forgotPassword".tr(),
           ),
         ),
         Container(
@@ -146,7 +146,7 @@ class _InputLoginState extends State<InputLogin> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextInLogin(
-                  signUp: "Login".tr(),
+                  signUp: "login".tr(),
                   boolIn: FontWeight.bold,
                   colorText: Colors.white,
                 ),
@@ -160,26 +160,26 @@ class _InputLoginState extends State<InputLogin> {
 
   String? _checkMail(String value) {
     if (value.isEmpty) {
-      return "Please do not leave empty".tr();
+      return "pleaseDoNotLeaveEmpty".tr();
     }
     if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-      return "Please enter a valid address".tr();
+      return "pleaseEnterValidAddress".tr();
     }
     return null;
   }
 
   String? checkPassword(String? value) {
     if (value == null || value.isEmpty) {
-      return  "Please do not leave the password empty".tr();
+      return "pleaseDoNotLeavePasswordEmpty".tr();
     }
     if (value.length > 12) {
-      return "Please do not enter more than 12 characters".tr();
+      return "pleaseDoNotEnterMoreThan12Characters".tr();
     }
     if (!RegExp(r'^(?=.*[A-Z])').hasMatch(value)) {
-      return "Password must contain at least one uppercase letter".tr();
+      return "passwordMustContainUpperCase".tr();
     }
     if (!RegExp(r'^(?=.*[!@#$%^&*(),.?":{}|<>])').hasMatch(value)) {
-      return  "Password must contain at least one special character".tr();
+      return "passwordMustContainSpecialCharacter".tr();
     }
     return null;
   }
@@ -212,9 +212,7 @@ class _InputLoginState extends State<InputLogin> {
     } else {
       if (_formKey.currentState?.validate() == true) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-              content:
-                  Text("Incorrect account or password, please try again".tr())),
+          SnackBar(content: Text("incorrectAccountOrPassword".tr())),
         );
       } else {
         return;

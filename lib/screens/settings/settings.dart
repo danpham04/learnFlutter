@@ -4,6 +4,7 @@ import 'package:chage_learn_flutter/screens/settings/widgets/button_setting.dart
 import 'package:chage_learn_flutter/screens/settings/widgets/listile_setting_noti.dart';
 import 'package:chage_learn_flutter/screens/settings/widgets/listtile_setting_acc.dart';
 import 'package:chage_learn_flutter/screens/settings/widgets/setting_chage.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
@@ -31,52 +32,52 @@ class _SettingState extends State<Settings> {
         padding: const EdgeInsets.all(8),
         child: ListView(
           children: [
-            const SettingChage(
-              textName: "Account",
+            SettingChage(
+              textName: "account".tr(),
               icon: Icons.person,
               colorIcon: Colors.blue,
             ),
-            const ListtileSettingAcc(
-                textList: "Change Password",
-                iconList: Icon(Icons.arrow_forward_ios)),
-            const ListtileSettingAcc(
-                textList: "Content Settings",
-                iconList: Icon(Icons.arrow_forward_ios)),
-            const ListtileSettingAcc(
-                textList: "Social", iconList: Icon(Icons.arrow_forward_ios)),
             ListtileSettingAcc(
-              textList: "Language",
+                textList: "changePassword".tr(),
+                iconList: const Icon(Icons.arrow_forward_ios)),
+            ListtileSettingAcc(
+                textList: "contentSettings".tr(),
+                iconList: const Icon(Icons.arrow_forward_ios)),
+            ListtileSettingAcc(
+                textList: "social".tr(),
+                iconList: const Icon(Icons.arrow_forward_ios)),
+            ListtileSettingAcc(
+              textList: "language".tr(),
               iconList: const Icon(Icons.arrow_forward_ios),
               check: () {
                 Navigator.pushNamed(context, '/SettingLanguage');
                 // LocalizationChecker.changeLanguge(context);
               },
             ),
-            const ListtileSettingAcc(
-                textList: "Privacy And Security",
-                iconList: Icon(Icons.arrow_forward_ios)),
-            const SettingChage(icon: Icons.volume_up, textName: "Notification"),
-            const ListileSettingNoti(
-              textNameAction: "ThemeDark",
+            ListtileSettingAcc(
+                textList: "privacyAndSecurity".tr(),
+                iconList: const Icon(Icons.arrow_forward_ios)),
+            SettingChage(icon: Icons.volume_up, textName: "notification".tr()),
+            ListileSettingNoti(
+              textNameAction: "themeDark".tr(),
               colorActive: Colors.blue,
               colorInactive: Colors.pink,
             ),
-            const ListileSettingNoti(
-              textNameAction: "Account Active",
+            ListileSettingNoti(
+              textNameAction: "accountActive".tr(),
               colorActive: Colors.blue,
               colorInactive: Colors.pink,
             ),
-            const ListileSettingNoti(
-              textNameAction: "Opportunity",
+            ListileSettingNoti(
+              textNameAction: "opportunity".tr(),
               colorActive: Colors.blue,
               colorInactive: Colors.pink,
             ),
             ButtonSetting(
               hanhDong: () {
                 Navigator.pop(context);
-                
               },
-              textButton: "SIGNOUT",
+              textButton: "signOut".tr(),
               sizeButton: const Size(150, 40),
               colorButton: const Color.fromARGB(255, 218, 206, 167),
             ),

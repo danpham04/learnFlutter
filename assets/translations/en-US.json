@@ -29,5 +29,6 @@
     "pleaseDoNotEnterMoreThan12Characters": "Please do not enter more than 12 characters",
     "passwordMustContainUpperCase": "Password must contain at least one uppercase letter",
     "passwordMustContainSpecialCharacter": "Password must contain at least one special character",
-    "incorrectAccountOrPassword": "Incorrect account or password, please try again"
+    "incorrectAccountOrPassword": "Incorrect account or password, please try again",
+    "changeLanguage": "Change Language"
 }

@@ -54,7 +54,9 @@ class _HomeState extends State<Home> {
                     const ScrollMotion(), // hiệu ứng chuyển ddooongj khi trượt
                 children: [
                   SlidableAction(
-                    onPressed: (context) {},
+                    onPressed: (context) {
+                      
+                    },
                     backgroundColor: Colors.green,
                     icon: Icons.change_circle,
                     label: 'Change infor',

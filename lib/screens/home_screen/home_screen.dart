@@ -4,6 +4,7 @@ import 'package:chage_learn_flutter/screens/home/home.dart';
 import 'package:chage_learn_flutter/screens/home_screen/widgets/tab_home.dart';
 import 'package:chage_learn_flutter/screens/home_screen/widgets/tab_icon.dart';
 import 'package:chage_learn_flutter/screens/settings/settings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class MyHome extends StatefulWidget {
@@ -38,8 +39,8 @@ class _MyHomeState extends State<MyHome> {
             icon: Icon(Icons.more_vert),
             colorIcon: Colors.white,
           ),
-          title: const Text(
-            "AppBar",
+          title: Text(
+            "appBar".tr(),
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: true,
@@ -76,7 +77,7 @@ class _MyHomeState extends State<MyHome> {
               colorIcon: Colors.white,
             ),
           ],
-          bottom: const TabBar(
+          bottom: TabBar(
               indicatorColor: Colors.blue,
               indicatorSize: TabBarIndicatorSize.label,
               // dividerColor: Color.fromARGB(255, 43, 216, 196),
@@ -84,19 +85,19 @@ class _MyHomeState extends State<MyHome> {
               indicatorWeight: 4,
               tabs: [
                 TabHome(
-                  textTab: "Home",
+                  textTab: "home".tr(),
                   iconTab: Icons.home,
                 ),
                 TabHome(
-                  textTab: "Feed",
+                  textTab: "feed".tr(),
                   iconTab: Icons.list,
                 ),
                 TabHome(
-                  textTab: "Profile",
+                  textTab: "profile".tr(),
                   iconTab: Icons.person,
                 ),
                 TabHome(
-                  textTab: "Setting",
+                  textTab: "setting".tr(),
                   iconTab: Icons.settings,
                 ),
               ]),

@@ -29,35 +29,37 @@ class _LoginState extends State<Login> {
           ),
         ),
         child: Center(
-          child: Container(
-            padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
-            // margin: const EdgeInsets.only(top: 40),
-            width: 340,
-            height: MediaQuery.of(context).size.height * 0.75,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), color: Colors.white),
-            child:  Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: TextInLogin(
-                    signUp: 'Login'.tr(),
-                    boolIn: FontWeight.bold,
-                    sizeText: 35,
+          child: SingleChildScrollView(
+            child: Container(
+              padding: const EdgeInsets.only(top: 6, left: 20, right: 20),
+              // margin: const EdgeInsets.only(top: 40),
+              width: 340,
+              height: MediaQuery.of(context).size.height * 0.75,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20), color: Colors.white),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextInLogin(
+                      signUp: "login".tr(),
+                      boolIn: FontWeight.bold,
+                      sizeText: 35,
+                    ),
                   ),
-                ),
-                InputLogin(),
-                // ButtonLogin(),
-                Padding(
-                  padding: EdgeInsets.only(top: 40, bottom: 8),
-                  child: TextInLogin(
-                    signUp: 'Or Sign Up Using'.tr(),
-                    sizeText: 12,
+                  const InputLogin(),
+                  // ButtonLogin(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 35, bottom: 8),
+                    child: TextInLogin(
+                      signUp: "orSignUpUsing".tr(),
+                      sizeText: 12,
+                    ),
                   ),
-                ),
-                IconLogin(),
-                BottomLogin(),
-              ],
+                  const IconLogin(),
+                  const BottomLogin(),
+                ],
+              ),
             ),
           ),
         ),

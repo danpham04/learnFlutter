@@ -12,16 +12,16 @@ class BottomLogin extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 65),
+          padding: const EdgeInsets.only(top: 65),
           child: TextInLogin(
-            signUp: 'Or Sign UP Using'.tr(),
+            signUp: "orSignUpUsing".tr(),
             sizeText: 12,
           ),
         ),
         TextButton(
             onPressed: () {},
             child: TextInLogin(
-              signUp: 'SIGN UP'.tr(),
+              signUp: "signUP".tr(),
               sizeText: 15,
             ))
       ],
