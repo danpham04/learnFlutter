@@ -1,8 +1,8 @@
 import 'package:chage_learn_flutter/screens/home/widget/text_infor.dart';
 import 'package:flutter/material.dart';
 
-class UserImformation extends StatelessWidget {
-  const UserImformation({
+class UserInformation extends StatelessWidget {
+  const UserInformation({
     super.key,
     required this.user,
     required this.mail,

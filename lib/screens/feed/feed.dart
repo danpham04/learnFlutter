@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:chage_learn_flutter/screens/feed/widgets/feed_path.dart';
-import 'package:chage_learn_flutter/screens/home/widget/user_imformation.dart';
+import 'package:chage_learn_flutter/screens/home/widget/user_information.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -58,7 +58,7 @@ class _ProfileState extends State<Feed> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => UserImformation(
+                      builder: (context) => UserInformation(
                           user: img['name'],
                           mail: img['mail'],
                           address: img['address'],
