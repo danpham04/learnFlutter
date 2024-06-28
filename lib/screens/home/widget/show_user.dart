@@ -1,4 +1,4 @@
-import 'package:chage_learn_flutter/screens/home/widget/imformation.dart';
+import 'package:chage_learn_flutter/screens/home/widget/information.dart';
 import 'package:flutter/material.dart';
 
 class ShowUsers extends StatelessWidget {
@@ -26,7 +26,7 @@ class ShowUsers extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Imformation(
+            builder: (context) => Information(
               user: user['name'],
               mail: user['mail'],
               address: user['address'],

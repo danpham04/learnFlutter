@@ -1,4 +1,5 @@
 import 'package:chage_learn_flutter/screens/home/widget/text_infor.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class UserInformation extends StatelessWidget {
@@ -22,7 +23,7 @@ class UserInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("User Imformation"),
+        title: Text("information".tr()),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
