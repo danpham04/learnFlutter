@@ -1,3 +1,4 @@
+import 'package:chage_learn_flutter/global/app_routes.dart';
 import 'package:chage_learn_flutter/login/widget/data_login.dart';
 import 'package:chage_learn_flutter/login/widget/text_in_login.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -207,7 +208,8 @@ class _InputLoginState extends State<InputLogin> {
       //   },
       // );
 
-      Navigator.of(context).pushNamed('/MyHome');
+      Navigator.of(context)
+          .pushNamed(AppRoutes.myHome, arguments: "Toi la bien");
     } else {
       if (_formKey.currentState?.validate() == true) {
         ScaffoldMessenger.of(context).showSnackBar(

@@ -8,8 +8,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class MyHome extends StatefulWidget {
-  const MyHome({super.key});
-
+  const MyHome({super.key, required this.nameTitle});
+  final String nameTitle;
   @override
   State<MyHome> createState() => _MyHomeState();
 }
@@ -40,8 +40,9 @@ class _MyHomeState extends State<MyHome> {
             colorIcon: Colors.white,
           ),
           title: Text(
-            "appBar".tr(),
-            style: TextStyle(color: Colors.white),
+            // "appBar".tr(),
+            widget.nameTitle,
+            style: const TextStyle(color: Colors.white),
           ),
           centerTitle: true,
           actions: [

@@ -44,16 +44,6 @@ class _ChangeUserState extends State<ChangeUser> {
     _controllerNationality.dispose();
   }
 
-  void change() {
-    setState(() {
-      widget.userHomeData[widget.index]['name'];
-      widget.userHomeData[widget.index]['mail'];
-      widget.userHomeData[widget.index]['date of birth'];
-      widget.userHomeData[widget.index]['address'];
-      widget.userHomeData[widget.index]['Nationality'];
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

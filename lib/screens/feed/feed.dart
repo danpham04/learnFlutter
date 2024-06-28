@@ -102,15 +102,20 @@ class _ProfileState extends State<Feed> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-                onPressed: () {
-                  _controller.previousPage();
-                },
-                child: const Icon(Icons.arrow_back)),
+              onPressed: () {
+                _controller.previousPage();
+              },
+              child: const Icon(Icons.arrow_back),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
             ElevatedButton(
-                onPressed: () {
-                  _controller.nextPage();
-                },
-                child: const Icon(Icons.arrow_forward))
+              onPressed: () {
+                _controller.nextPage();
+              },
+              child: const Icon(Icons.arrow_forward),
+            )
           ],
         )
       ],
