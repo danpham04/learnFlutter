@@ -24,9 +24,9 @@ class MyApp extends StatelessWidget {
       title: 'App Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => const MyHome(),
-        // '/': (context) => const Login(),
-        // '/MyHome': (context) => const MyHome(),
+        // '/': (context) => const MyHome(),
+        '/': (context) => const Login(),
+        '/MyHome': (context) => const MyHome(),
         // '/Home': (context) => const Home(),
         // '/Feed': (context) => const Feed(),
         // '/Profile': (context) => const Profile(),
