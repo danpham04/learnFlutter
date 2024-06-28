@@ -11,7 +11,8 @@ class LearnAppBar extends StatelessWidget implements PreferredSizeWidget {
       required this.titleName,
       this.actions,
       this.bottom,
-      this.heightAppBar = kToolbarHeight});
+      this.heightAppBar = kToolbarHeight,
+      this.colors = Colors.black});
   final bool centerTitle;
   final bool showLeading;
   final Widget? leading;
@@ -20,6 +21,7 @@ class LearnAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   PreferredSizeWidget? bottom;
   final double heightAppBar;
+  final Color? colors;
 
   @override
   Size get preferredSize => Size.fromHeight(heightAppBar);
@@ -43,15 +45,15 @@ class LearnAppBar extends StatelessWidget implements PreferredSizeWidget {
                     // hàm nhảy về màn hình trước đó
                     Navigator.of(context).pop();
                   },
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.arrow_back_ios,
-                    color: Colors.white,
+                    color: colors,
                     size: 24,
                   ))
           : null,
       title: Text(
         titleName,
-        style: const TextStyle(color: Colors.white),
+        style: TextStyle(color: colors),
       ),
       actions: actions,
       bottom: bottom,

@@ -1,5 +1,4 @@
-import 'package:chage_learn_flutter/screens/settings/change_language/localization_checker.dart';
-import 'package:chage_learn_flutter/screens/settings/change_language/setting_language.dart';
+
 import 'package:chage_learn_flutter/screens/settings/widgets/button_setting.dart';
 import 'package:chage_learn_flutter/screens/settings/widgets/listile_setting_noti.dart';
 import 'package:chage_learn_flutter/screens/settings/widgets/listtile_setting_acc.dart';

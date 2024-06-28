@@ -1,6 +1,5 @@
 import 'package:chage_learn_flutter/login/widget/data_login.dart';
 import 'package:chage_learn_flutter/login/widget/text_in_login.dart';
-import 'package:chage_learn_flutter/screens/home_screen/home_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
