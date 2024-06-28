@@ -1,4 +1,7 @@
 import 'package:chage_learn_flutter/global/app_routes.dart';
+import 'package:chage_learn_flutter/screens/home_screen/home_screen.dart';
+import 'package:chage_learn_flutter/screens/settings/change_language/setting_language.dart';
+import 'package:chage_learn_flutter/screens/website/website.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -13,20 +16,22 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
       title: 'App Demo',
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => const MyHome(nameTitle: "My home",),
-      //   // '/': (context) => const Login(),
-      //   // '/MyHome': (context) => const MyHome(),
-      //   // '/Home': (context) => const Home(),
-      //   // '/Feed': (context) => const Feed(),
-      //   // '/Profile': (context) => const Profile(),
-      //   // '/Setting': (context) => const Settings(),
-      //   '/Website': (context) => const Website(),
-      //   '/SettingLanguage': (context) => const SettingLanguage(),
-      //   // '/ChangeUser': (context) => const ChangeUser(index: null,),
-      // },
-      onGenerateRoute: AppRoutes.onGenerateRoute,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MyHome(
+              nameTitle: "My home",
+            ),
+        // '/': (context) => const Login(),
+        // '/MyHome': (context) => const MyHome(),
+        // '/Home': (context) => const Home(),
+        // '/Feed': (context) => const Feed(),
+        // '/Profile': (context) => const Profile(),
+        // '/Setting': (context) => const Settings(),
+        '/Website': (context) => const Website(),
+        '/SettingLanguage': (context) => const SettingLanguage(),
+        // '/ChangeUser': (context) => const ChangeUser(index: null,),
+      },
+      // onGenerateRoute: AppRoutes.onGenerateRoute,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
