@@ -8,7 +8,7 @@ class HomeData {
       'mail': 'NguyenA@gmail.com',
       'address': 'Nam Dinh',
       'date of birth': '25/95/2004',
-      'Nationality': 'Viet Nam'
+      'nationality': 'Viet Nam'
     },
     {
       'imgavt': AppPaths().hotay,
@@ -16,7 +16,7 @@ class HomeData {
       'mail': 'NguyenAnh@gmail.com',
       'address': 'Nam Dinh',
       'date of birth': '25/95/2004',
-      'Nationality': 'Viet Nam'
+      'nationality': 'Viet Nam'
     },
     {
       'imgavt': AppPaths().sontay,
@@ -24,7 +24,7 @@ class HomeData {
       'mail': 'NGoMai@gmail.com',
       'address': 'Nam Dinh',
       'date of birth': '25/95/2004',
-      'Nationality': 'Viet Nam'
+      'nationality': 'Viet Nam'
     },
     {
       'imgavt': AppPaths().imgCtv,
@@ -32,7 +32,7 @@ class HomeData {
       'mail': 'HoangT@gmail.com',
       'address': 'Nam Dinh',
       'date of birth': '25/95/2004',
-      'Nationality': 'Viet Nam'
+      'nationality': 'Viet Nam'
     },
     {
       'imgavt': AppPaths().tang,
@@ -40,7 +40,7 @@ class HomeData {
       'mail': 'MaiA@gmail.com',
       'address': 'Nam Dinh',
       'date of birth': '25/95/2004',
-      'Nationality': 'Viet Nam'
+      'nationality': 'Viet Nam'
     },
     {
       'imgavt': AppPaths().hotay,
@@ -48,7 +48,7 @@ class HomeData {
       'mail': 'NhongA@gmail.com',
       'address': 'Nam Dinh',
       'date of birth': '25/95/2004',
-      'Nationality': 'Viet Nam'
+      'nationality': 'Viet Nam'
     },
     {
       'imgavt': AppPaths().sontay,
@@ -56,7 +56,7 @@ class HomeData {
       'mail': 'TranB@gmail.com',
       'address': 'Nam Dinh',
       'date of birth': '25/95/2004',
-      'Nationality': 'Viet Nam'
+      'nationality': 'Viet Nam'
     },
     {
       'imgavt': AppPaths().tang,
@@ -64,7 +64,7 @@ class HomeData {
       'mail': 'NguyenB@gmail.com',
       'address': 'Nam Dinh',
       'date of birth': '25/95/2004',
-      'Nationality': 'Viet Nam'
+      'nationality': 'Viet Nam'
     },
     {
       'imgavt': AppPaths().imgCtv,
@@ -72,7 +72,7 @@ class HomeData {
       'mail': 'PhamVanA@gmail.com',
       'address': 'Nam Dinh',
       'date of birth': '25/95/2004',
-      'Nationality': 'Viet Nam'
+      'nationality': 'Viet Nam'
     },
   ];
 }

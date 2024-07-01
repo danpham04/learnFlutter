@@ -1,5 +1,4 @@
 import 'package:chage_learn_flutter/screens/home/widget/change_users/textfile_add_user.dart';
-import 'package:chage_learn_flutter/screens/home/widget/home_data.dart';
 
 import 'package:chage_learn_flutter/screens/home/widget/text_infor.dart';
 import 'package:chage_learn_flutter/widgets/learn_app_bar.dart';
@@ -120,7 +119,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   hintText: 'Nhập quốc tịch',
                   onChanged: (value) {
                     setState(() {
-                      widget.userHomeData[widget.index]['Nationality'] =
+                      widget.userHomeData[widget.index]['nationality'] =
                           _controllerNationality.text;
                     });
                   },

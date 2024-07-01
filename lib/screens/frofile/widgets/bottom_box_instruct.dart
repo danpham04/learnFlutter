@@ -1,3 +1,4 @@
+import 'package:chage_learn_flutter/global/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -86,9 +87,7 @@ class _BottomBoxInstructState extends State<BottomBoxInstruct> {
                 backgroundColor: Colors.blue,
               ),
               onPressed: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => const Website()));
-                Navigator.pushNamed(context, '/Website');
+                Navigator.of(context).pushNamed(AppRoutes.website);
               },
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

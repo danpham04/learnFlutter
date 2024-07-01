@@ -22,7 +22,7 @@ class UserInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("User Imformation"),
+        title: const Text("User Information"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
