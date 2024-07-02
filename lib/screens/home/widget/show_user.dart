@@ -1,5 +1,4 @@
 import 'package:chage_learn_flutter/global/app_routes.dart';
-import 'package:chage_learn_flutter/screens/home/widget/information.dart';
 import 'package:flutter/material.dart';
 
 class ShowUsers extends StatelessWidget {

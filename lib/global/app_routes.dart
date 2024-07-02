@@ -1,11 +1,9 @@
 import 'package:chage_learn_flutter/login/login.dart';
 import 'package:chage_learn_flutter/screens/home/widget/information.dart';
 import 'package:chage_learn_flutter/screens/home/widget/user_information.dart';
-
 import 'package:chage_learn_flutter/screens/home_screen/home_screen.dart';
 import 'package:chage_learn_flutter/screens/settings/change_language/setting_language.dart';
 import 'package:chage_learn_flutter/screens/website/website.dart';
-
 import 'package:flutter/material.dart';
 
 class AppRoutes {

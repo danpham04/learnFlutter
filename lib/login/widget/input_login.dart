@@ -21,8 +21,9 @@ class _InputLoginState extends State<InputLogin> {
   bool _password = true;
   final _formKey = GlobalKey<FormState>();
 
-  // final _focusUserMail = FocusNode();
-  // final _focusPass = FocusNode();
+  final FocusNode _focusUserMail = FocusNode();
+  final FocusNode _focusPass = FocusNode();
+  final FocusNode _nop = FocusNode();
 
   @override
   void initState() {
@@ -65,9 +66,9 @@ class _InputLoginState extends State<InputLogin> {
                 validator: (value) {
                   return _checkMail(value!);
                 },
-                // focusNode: _focusUserMail,
-                // onFieldSubmitted: (value) =>
-                //     Focus.of(context).requestFocus(_focusPass),
+                focusNode: _focusUserMail,
+                onFieldSubmitted: (value) =>
+                    FocusScope.of(context).requestFocus(_focusPass),
                 decoration: InputDecoration(
                   hintText: "typeYourMail".tr(),
                   prefixIcon: const Icon(
@@ -82,8 +83,9 @@ class _InputLoginState extends State<InputLogin> {
               ),
               TextFormField(
                 controller: _editingControllerPassword,
-                // focusNode: _focusPass,
-                // onFieldSubmitted: (value) => ,
+                focusNode: _focusPass,
+                onFieldSubmitted: (value) =>
+                    FocusScope.of(context).requestFocus(_nop),
                 onChanged: (value) {
                   setState(
                     () {
@@ -134,6 +136,7 @@ class _InputLoginState extends State<InputLogin> {
             ),
           ),
           child: ElevatedButton(
+            focusNode: _nop,
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.transparent,
               shadowColor: Colors.transparent,
