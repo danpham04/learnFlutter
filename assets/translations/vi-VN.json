@@ -30,5 +30,6 @@
     "passwordMustContainUpperCase": "Password cần có ít nhất một chữ cái in hoa",
     "passwordMustContainSpecialCharacter": "Password cần có ít nhất một kí tự đặc biệt",
     "incorrectAccountOrPassword": "Tài khoản mật khẩu không đúng, nhập lại",
-    "changeLanguage" : "Thay đổi ngôn ngữ"
+    "changeLanguage" : "Thay đổi ngôn ngữ",
+    "information":"Thông tin người dùng"
 }

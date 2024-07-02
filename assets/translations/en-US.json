@@ -30,5 +30,6 @@
     "passwordMustContainUpperCase": "Password must contain at least one uppercase letter",
     "passwordMustContainSpecialCharacter": "Password must contain at least one special character",
     "incorrectAccountOrPassword": "Incorrect account or password, please try again",
-    "changeLanguage": "Change Language"
+    "changeLanguage": "Change Language",
+    "information":"User imformation"
 }

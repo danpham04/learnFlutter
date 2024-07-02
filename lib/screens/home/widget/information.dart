@@ -25,7 +25,7 @@ class _ImformationState extends State<Information> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('User imformation'),
+          title: const Text('User information'),
         ),
         body: Column(
           children: [

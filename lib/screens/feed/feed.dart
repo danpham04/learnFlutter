@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:chage_learn_flutter/global/app_routes.dart';
 import 'package:chage_learn_flutter/screens/feed/widgets/feed_path.dart';
 import 'package:chage_learn_flutter/screens/home/widget/user_information.dart';
 import 'package:flutter/material.dart';
@@ -55,18 +56,27 @@ class _ProfileState extends State<Feed> {
               final img = FeedPath().feedData[index];
               return GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => UserInformation(
-                          user: img['name'],
-                          mail: img['mail'],
-                          address: img['address'],
-                          dateOfBirth: img['date of birth'],
-                          nationality: img['Nationality'],
-                          img: img['imgavt']),
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => UserInformation(
+                  //         user: img['name'],
+                  //         mail: img['mail'],
+                  //         address: img['address'],
+                  //         dateOfBirth: img['date of birth'],
+                  //         nationality: img['Nationality'],
+                  //         img: img['imgavt']),
+                  //   ),
+                  // );
+                  Navigator.pushNamed(context, AppRoutes.userInformation,
+                      arguments: {
+                        'user': img['name'],
+                        'mail': img['mail'],
+                        'address': img['address'],
+                        'dateOfBirth': img['date of birth'],
+                        'nationality': img['Nationality'],
+                        'img': img['imgavt']
+                      });
                 },
                 child: SizedBox(
                   width: 270,

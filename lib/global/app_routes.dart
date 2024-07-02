@@ -1,8 +1,11 @@
 import 'package:chage_learn_flutter/login/login.dart';
-import 'package:chage_learn_flutter/screens/feed/feed.dart';
-import 'package:chage_learn_flutter/screens/frofile/profile.dart';
+import 'package:chage_learn_flutter/screens/home/widget/information.dart';
+import 'package:chage_learn_flutter/screens/home/widget/user_information.dart';
+
 import 'package:chage_learn_flutter/screens/home_screen/home_screen.dart';
-import 'package:chage_learn_flutter/screens/settings/settings.dart';
+import 'package:chage_learn_flutter/screens/settings/change_language/setting_language.dart';
+import 'package:chage_learn_flutter/screens/website/website.dart';
+
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -29,12 +32,29 @@ class AppRoutes {
         return const Login();
       case myHome:
         return MyHome(nameTitle: arguments as String); // string
-      case feed:
-        return const Feed(); // int
-      case profile:
-        return const Profile(); // bool
-      case settings:
-        return const Settings(); // class model
+      case website:
+        return const Website();
+      case changeLanguage:
+        return const SettingLanguage();
+      case userInformation:
+        final args = arguments as Map<String, dynamic>;
+        return UserInformation(
+            user: args['user']!,
+            mail: args['mail']!,
+            address: args['address']!,
+            dateOfBirth: args['dateOfBirth']!,
+            nationality: args['nationality']!,
+            img: args['img']!);
+      case information:
+        final args = arguments as Map<String, dynamic>;
+        return Information(
+            user: args['name'],
+            mail: args['mail'],
+            address: args['address'],
+            dateOfBirth: args['dateOfBirth'],
+            nationality: args['nationality'],
+            img: args['img']);
+
       default:
         throw 'Route  $routeName is not define';
     }
@@ -43,7 +63,8 @@ class AppRoutes {
   // define named Routes
   static const String login = '/';
   static const String myHome = '/my_home';
-  static const String feed = '/feed';
-  static const String profile = '/profile';
-  static const String settings = '/settings';
+  static const String website = '/website';
+  static const String userInformation = '/user_information';
+  static const String changeLanguage = '/change_language';
+  static const String information = '/information';
 }

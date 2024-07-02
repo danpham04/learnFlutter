@@ -1,4 +1,4 @@
-
+import 'package:chage_learn_flutter/global/app_routes.dart';
 import 'package:chage_learn_flutter/screens/settings/widgets/button_setting.dart';
 import 'package:chage_learn_flutter/screens/settings/widgets/listile_setting_noti.dart';
 import 'package:chage_learn_flutter/screens/settings/widgets/listtile_setting_acc.dart';
@@ -49,8 +49,7 @@ class _SettingState extends State<Settings> {
               textList: "language".tr(),
               iconList: const Icon(Icons.arrow_forward_ios),
               check: () {
-                Navigator.pushNamed(context, '/SettingLanguage');
-                // LocalizationChecker.changeLanguge(context);
+                Navigator.of(context).pushNamed(AppRoutes.changeLanguage);
               },
             ),
             ListtileSettingAcc(
