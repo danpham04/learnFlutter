@@ -1,12 +1,8 @@
-import 'dart:convert';
-
 import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/change_users/change_user.dart';
-import 'package:chage_learn_flutter/screens/home/widget/home_data.dart';
 import 'package:chage_learn_flutter/screens/home/widget/show_user.dart';
 import 'package:chage_learn_flutter/services/api_service/home_service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class Home extends StatefulWidget {
