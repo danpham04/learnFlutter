@@ -1,21 +1,14 @@
+import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/text_infor.dart';
 import 'package:flutter/material.dart';
 
 class Information extends StatefulWidget {
   const Information(
       {super.key,
-      required this.user,
-      required this.mail,
-      required this.address,
-      required this.dateOfBirth,
-      required this.nationality,
-      required this.img});
-  final String user;
-  final String mail;
-  final String address;
-  final String dateOfBirth;
-  final String nationality;
-  final String img;
+      required this.user,}
+      );
+  final UserModel user;
+  
   @override
   State<Information> createState() => _ImformationState();
 }
@@ -55,12 +48,12 @@ class _ImformationState extends State<Information> {
                         child: Column(
                           children: [
                             TextInfor(
-                              text: 'Gmail: ${widget.mail}',
+                              text: 'Gmail: ${widget.user.mail}',
                               sizeText: 15,
                             ),
-                            TextInfor(text: 'Địa chỉ: ${widget.address}'),
-                            TextInfor(text: 'Năm sinh: ${widget.dateOfBirth}'),
-                            TextInfor(text: 'Quốc tịch: ${widget.nationality}'),
+                            TextInfor(text: 'Địa chỉ: ${widget.user.address}'),
+                            TextInfor(text: 'Năm sinh: ${widget.user.dateOfBirth}'),
+                            TextInfor(text: 'Quốc tịch: ${widget.user.nationality}'),
                           ],
                         ),
                       ),
@@ -72,14 +65,14 @@ class _ImformationState extends State<Information> {
                     children: [
                       ClipOval(
                         child: Image.asset(
-                          widget.img,
+                          widget.user.image??'',
                           width: 70,
                           height: 70,
                           fit: BoxFit.cover,
                         ),
                       ),
                       TextInfor(
-                        text: widget.user,
+                        text: widget.user.name??'',
                         sizeText: 25,
                         colorText: Colors.black,
                       ),

@@ -1,4 +1,5 @@
 import 'package:chage_learn_flutter/login/login.dart';
+import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/information.dart';
 import 'package:chage_learn_flutter/screens/home/widget/user_information.dart';
 import 'package:chage_learn_flutter/screens/home_screen/home_screen.dart';
@@ -44,14 +45,8 @@ class AppRoutes {
             nationality: args['nationality']!,
             img: args['img']!);
       case information:
-        final args = arguments as Map<String, dynamic>;
         return Information(
-            user: args['name'],
-            mail: args['mail'],
-            address: args['address'],
-            dateOfBirth: args['dateOfBirth'],
-            nationality: args['nationality'],
-            img: args['img']);
+            user: arguments as UserModel,);
 
       default:
         throw 'Route  $routeName is not define';

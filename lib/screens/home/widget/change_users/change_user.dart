@@ -1,3 +1,4 @@
+import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/change_users/textfile_add_user.dart';
 
 import 'package:chage_learn_flutter/screens/home/widget/text_infor.dart';
@@ -8,7 +9,7 @@ class ChangeUser extends StatefulWidget {
   const ChangeUser(
       {super.key, required this.index, required this.userHomeData});
   final int index;
-  final userHomeData;
+  final UserModel userHomeData;
 
   @override
   State<ChangeUser> createState() => _ChangeUserState();
@@ -63,8 +64,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   hintText: 'Nhập tên',
                   onChanged: (value) {
                     setState(() {
-                      widget.userHomeData[widget.index]['name'] =
-                          _controllerName.text;
+                      widget.userHomeData.name = _controllerName.text;
                     });
                   },
                 ),
@@ -77,8 +77,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   hintText: 'Nhập gmail',
                   onChanged: (value) {
                     setState(() {
-                      widget.userHomeData[widget.index]['mail'] =
-                          _controllerGmail.text;
+                      widget.userHomeData.mail = _controllerGmail.text;
                     });
                   },
                 ),
@@ -91,8 +90,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   hintText: 'Nhập địa chỉ',
                   onChanged: (value) {
                     setState(() {
-                      widget.userHomeData[widget.index]['address'] =
-                          _controllerAddress.text;
+                      widget.userHomeData.address = _controllerAddress.text;
                     });
                   },
                 ),
@@ -105,8 +103,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   hintText: 'Nhập ngày sinh',
                   onChanged: (value) {
                     setState(() {
-                      widget.userHomeData[widget.index]['date of birth'] =
-                          _controllerAge.text;
+                      widget.userHomeData.dateOfBirth = _controllerAge.text;
                     });
                   },
                 ),
@@ -119,7 +116,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   hintText: 'Nhập quốc tịch',
                   onChanged: (value) {
                     setState(() {
-                      widget.userHomeData[widget.index]['nationality'] =
+                      widget.userHomeData.nationality =
                           _controllerNationality.text;
                     });
                   },

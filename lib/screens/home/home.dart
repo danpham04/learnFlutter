@@ -1,7 +1,11 @@
+import 'dart:convert';
+
+import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/change_users/change_user.dart';
 import 'package:chage_learn_flutter/screens/home/widget/home_data.dart';
 import 'package:chage_learn_flutter/screens/home/widget/show_user.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class Home extends StatefulWidget {
@@ -14,30 +18,65 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List userHomeData = HomeData().userHomeData;
+  // List userHomeData = HomeData().userHomeData;
 
-  void _deleteUser(int index) {
+  List<UserModel> _loadUser = [];
+
+  Future<void> readData() async {
+    final String response =
+        await rootBundle.loadString('assets/jsons/user_data.json');
+    final data = await json.decode(response);
+    final user = data["data"];
+    final users = user as List<dynamic>;
+
+    // if (!mounted) {
+    //   return;
+    // }
+
     setState(() {
-      userHomeData.removeAt(index);
+      _loadUser = users.map((e) {
+        return UserModel.fromMap(e);
+      }).toList();
     });
   }
 
-  void _updateUser(int index, List newUser) {
+  @override
+  void initState() {
+    // TODO: implement initState
+    readData();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  void _deleteUser(int index) {
     setState(() {
-      userHomeData[index] = newUser;
+      _loadUser.removeAt(index);
+    });
+  }
+
+  void _updateUser(int index, UserModel newUser) {
+    setState(() {
+      _loadUser[index] = newUser;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    // readData();
     return SlidableAutoCloseBehavior(
       closeWhenOpened: true, // khi kéo item này item khác đóng lại
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: ListView.builder(
-          itemCount: userHomeData.length,
+          itemCount: _loadUser.length,
           itemBuilder: (context, index) {
-            final user = userHomeData[index];
+            final UserModel user = _loadUser[index];
+
             return Slidable(
               // startActionPane: ActionPane(
               //   motion: const StretchMotion(),
@@ -59,16 +98,13 @@ class _HomeState extends State<Home> {
                     const ScrollMotion(), // hiệu ứng chuyển ddooongj khi trượt
                 children: [
                   SlidableAction(
-                    // onPressed: (context) {
-                    //   Navigator.pushNamed(context, '/ChangeUser');
-                    // },
                     onPressed: (context) {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ChangeUser(
                             index: index,
-                            userHomeData: userHomeData,
+                            userHomeData: user,
                           ),
                         ),
                       );

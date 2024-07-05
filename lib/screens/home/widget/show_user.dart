@@ -1,4 +1,5 @@
 import 'package:chage_learn_flutter/global/app_routes.dart';
+import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:flutter/material.dart';
 
 class ShowUsers extends StatelessWidget {
@@ -7,21 +8,21 @@ class ShowUsers extends StatelessWidget {
     required this.user,
   });
 
-  final user;
+  final UserModel user;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: ClipOval(
         child: Image.asset(
-          user['imgavt'],
+          user.image??'',
           width: 50,
           height: 50,
           fit: BoxFit.cover,
         ),
       ),
-      title: Text(user['name']),
-      subtitle: Text(user['mail']),
+      title: Text(user.name??''),
+      subtitle: Text(user.mail??''),
       onTap: () {
         // Navigator.push(
         //   context,
@@ -36,14 +37,7 @@ class ShowUsers extends StatelessWidget {
         //     ),
         //   ),
         // );
-        Navigator.of(context).pushNamed(AppRoutes.information, arguments: {
-          'name': user['name'],
-          'mail': user['mail'],
-          'address': user['address'],
-          'dateOfBirth': user['date of birth'],
-          'nationality': user['nationality'],
-          'img': user['imgavt'],
-        });
+        Navigator.of(context).pushNamed(AppRoutes.information, arguments: user);
       },
     );
   }
