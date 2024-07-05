@@ -4,6 +4,7 @@ import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/change_users/change_user.dart';
 import 'package:chage_learn_flutter/screens/home/widget/home_data.dart';
 import 'package:chage_learn_flutter/screens/home/widget/show_user.dart';
+import 'package:chage_learn_flutter/services/api_service/home_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -18,38 +19,29 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  // List userHomeData = HomeData().userHomeData;
+
 
   List<UserModel> _loadUser = [];
 
-  Future<void> readData() async {
-    final String response =
-        await rootBundle.loadString('assets/jsons/user_data.json');
-    final data = await json.decode(response);
-    final user = data["data"];
-    final users = user as List<dynamic>;
+ final HomeService _homeService = HomeService();
 
-    // if (!mounted) {
-    //   return;
-    // }
-
-    setState(() {
-      _loadUser = users.map((e) {
-        return UserModel.fromMap(e);
-      }).toList();
-    });
-  }
+ void getData() async{
+  final List<UserModel> loadUserTemp = await _homeService.getData();
+ 
+  setState(() {
+    _loadUser = loadUserTemp;
+  });
+ }
 
   @override
   void initState() {
-    // TODO: implement initState
-    readData();
+    getData();
     super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
+
     super.dispose();
   }
 

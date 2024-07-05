@@ -1,18 +1,30 @@
+import 'dart:convert';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:chage_learn_flutter/global/app_routes.dart';
+import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/feed/widgets/feed_path.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Feed extends StatefulWidget {
   const Feed({super.key});
 
   @override
-  State<Feed> createState() => _ProfileState();
+  State<Feed> createState() => _FeedState();
 }
 
-class _ProfileState extends State<Feed> {
+class _FeedState extends State<Feed> {
   int _curr = 0;
+  List<UserModel> _loadImg = [];
+  Future<void> readImg() async{
+    final String response = await rootBundle.loadString('assets/jsons/user_data.json');
+    final data = await jsonDecode(response);
+    
+  }
+
+
 
   final _controller = CarouselController();
   @override
@@ -53,17 +65,10 @@ class _ProfileState extends State<Feed> {
             itemCount: FeedPath().feedData.length,
             itemBuilder: (context, index, realIndex) {
               final img = FeedPath().feedData[index];
+              final UserModel users = img;
               return GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, AppRoutes.userInformation,
-                      arguments: {
-                        'user': img['name'],
-                        'mail': img['mail'],
-                        'address': img['address'],
-                        'dateOfBirth': img['date of birth'],
-                        'nationality': img['Nationality'],
-                        'img': img['imgavt']
-                      });
+                  Navigator.of(context).pushNamed( AppRoutes.userInformation,arguments:users );
                 },
                 child: SizedBox(
                   width: 270,

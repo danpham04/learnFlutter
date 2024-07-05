@@ -1,3 +1,4 @@
+import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/text_infor.dart';
 import 'package:flutter/material.dart';
 
@@ -5,18 +6,9 @@ class UserInformation extends StatelessWidget {
   const UserInformation({
     super.key,
     required this.user,
-    required this.mail,
-    required this.address,
-    required this.dateOfBirth,
-    required this.nationality,
-    required this.img,
   });
-  final String user;
-  final String mail;
-  final String address;
-  final String dateOfBirth;
-  final String nationality;
-  final String img;
+  final UserModel user;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +25,7 @@ class UserInformation extends StatelessWidget {
               children: [
                 ClipOval(
                   child: Image.asset(
-                    img,
+                    user.image??'',
                     width: 70,
                     height: 70,
                     fit: BoxFit.cover,
@@ -42,7 +34,7 @@ class UserInformation extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0),
                   child: TextInfor(
-                    text: user,
+                    text: user.name??'',
                     sizeText: 25,
                     colorText: Colors.black,
                   ),
@@ -68,19 +60,19 @@ class UserInformation extends StatelessWidget {
                   colorText: Colors.black,
                 ),
                 TextInfor(
-                  text: 'Gmail: $mail',
+                  text: 'Gmail: ${user.mail??''}',
                   sizeText: 20,
                 ),
                 TextInfor(
-                  text: 'Địa chỉ: $address',
+                  text: 'Địa chỉ: ${user.address??''}',
                   sizeText: 20,
                 ),
                 TextInfor(
-                  text: 'Năm sinh: $dateOfBirth',
+                  text: 'Năm sinh: ${user.dateOfBirth??''}',
                   sizeText: 20,
                 ),
                 TextInfor(
-                  text: 'Quốc tịch: $nationality',
+                  text: 'Quốc tịch: ${user.nationality??''}',
                   sizeText: 20,
                 ),
               ],

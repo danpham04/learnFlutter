@@ -36,17 +36,9 @@ class AppRoutes {
       case changeLanguage:
         return const SettingLanguage();
       case userInformation:
-        final args = arguments as Map<String, dynamic>;
-        return UserInformation(
-            user: args['user']!,
-            mail: args['mail']!,
-            address: args['address']!,
-            dateOfBirth: args['dateOfBirth']!,
-            nationality: args['nationality']!,
-            img: args['img']!);
+        return UserInformation(user: arguments as UserModel);
       case information:
-        return Information(
-            user: arguments as UserModel,);
+        return Information(user: arguments as UserModel);
 
       default:
         throw 'Route  $routeName is not define';
