@@ -2,6 +2,7 @@ import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/change_users/textfile_add_user.dart';
 
 import 'package:chage_learn_flutter/screens/home/widget/text_infor.dart';
+import 'package:chage_learn_flutter/services/api_service/home_service.dart';
 import 'package:chage_learn_flutter/widgets/learn_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,8 @@ class ChangeUser extends StatefulWidget {
 }
 
 class _ChangeUserState extends State<ChangeUser> {
+  final HomeService _homeService = HomeService();
+
   late TextEditingController _controllerName;
   late TextEditingController _controllerGmail;
   late TextEditingController _controllerAddress;
@@ -24,7 +27,6 @@ class _ChangeUserState extends State<ChangeUser> {
 
   @override
   void initState() {
-    // TODO: implement initState
     _controllerName = TextEditingController();
     _controllerGmail = TextEditingController();
     _controllerAddress = TextEditingController();
@@ -35,7 +37,6 @@ class _ChangeUserState extends State<ChangeUser> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _controllerName.dispose();
     _controllerGmail.dispose();
@@ -130,6 +131,20 @@ class _ChangeUserState extends State<ChangeUser> {
                           const Color.fromARGB(255, 149, 196, 235)),
                   onPressed: () {
                     Navigator.pop(context);
+
+                    UserModel body = UserModel(
+                      image: "assets/images/ctv.png",
+                      name: _controllerName.text,
+                      mail: _controllerGmail.text,
+                      address: _controllerAddress.text,
+                      dateOfBirth: _controllerAge.text,
+                      nationality: _controllerNationality.text,
+                    );
+
+                    setState(() {
+                      // _homeService.createData(body);
+                      _homeService.create(body);
+                    });
                   },
                   child: const TextInfor(
                     text: 'Thay đổi tài khoản',

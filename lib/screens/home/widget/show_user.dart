@@ -39,6 +39,7 @@ class ShowUsers extends StatelessWidget {
         // );
         Navigator.of(context).pushNamed(AppRoutes.information, arguments: user);
       },
+      
     );
   }
 }

@@ -15,19 +15,17 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
-
   List<UserModel> _loadUser = [];
 
- final HomeService _homeService = HomeService();
-
- void getData() async{
-  final List<UserModel> loadUserTemp = await _homeService.getData();
- 
-  setState(() {
-    _loadUser = loadUserTemp;
-  });
- }
+  final HomeService _homeService = HomeService();
+  int indexUser = 0;
+  final UserModel users = UserModel();
+  void getData() async {
+    final List<UserModel> loadUserTemp = await _homeService.getData();
+    setState(() {
+      _loadUser = loadUserTemp;
+    });
+  }
 
   @override
   void initState() {
@@ -37,7 +35,6 @@ class _HomeState extends State<Home> {
 
   @override
   void dispose() {
-
     super.dispose();
   }
 
@@ -56,64 +53,81 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // readData();
-    return SlidableAutoCloseBehavior(
-      closeWhenOpened: true, // khi kéo item này item khác đóng lại
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: ListView.builder(
-          itemCount: _loadUser.length,
-          itemBuilder: (context, index) {
-            final UserModel user = _loadUser[index];
+    return Scaffold(
+      body: SlidableAutoCloseBehavior(
+        closeWhenOpened: true, // khi kéo item này item khác đóng lại
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: ListView.builder(
+            itemCount: _loadUser.length,
+            itemBuilder: (context, index) {
+              final UserModel user = _loadUser[index];
 
-            return Slidable(
-              // startActionPane: ActionPane(
-              //   motion: const StretchMotion(),
-              //   children: [
-              //     SlidableAction(
-              //       onPressed: (context) {},
-              //       backgroundColor: Colors.green,
-              //       icon: Icons.share,
-              //       label: 'Share',
-              //     )
-              //   ],
-              // ),
-              key: Key(index.toString()), //khóa cho mỗi phần tử
-              endActionPane: ActionPane(
-                // dismissible: DismissiblePane(
-                //   onDismissed: () {},
+              return Slidable(
+                // startActionPane: ActionPane(
+                //   motion: const StretchMotion(),
+                //   children: [
+                //     SlidableAction(
+                //       onPressed: (context) {},
+                //       backgroundColor: Colors.green,
+                //       icon: Icons.share,
+                //       label: 'Share',
+                //     )
+                //   ],
                 // ),
-                motion:
-                    const ScrollMotion(), // hiệu ứng chuyển ddooongj khi trượt
-                children: [
-                  SlidableAction(
-                    onPressed: (context) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ChangeUser(
-                            index: index,
-                            userHomeData: user,
+                key: Key(index.toString()), //khóa cho mỗi phần tử
+                endActionPane: ActionPane(
+                  // dismissible: DismissiblePane(
+                  //   onDismissed: () {},
+                  // ),
+                  motion:
+                      const ScrollMotion(), // hiệu ứng chuyển ddooongj khi trượt
+                  children: [
+                    SlidableAction(
+                      onPressed: (context) {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => ChangeUser(
+                              index: index,
+                              userHomeData: user,
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                    backgroundColor: Colors.green,
-                    icon: Icons.change_circle,
-                    label: 'Change infor',
-                  ),
-                  SlidableAction(
-                    onPressed: (context) => (_deleteUser(index)),
-                    backgroundColor: Colors.red,
-                    icon: Icons.delete,
-                    label: 'Delete',
-                  ),
-                ],
-              ),
+                        );
+                        setState(() {
+                          indexUser = index;
+                        });
+                      },
+                      backgroundColor: Colors.green,
+                      icon: Icons.change_circle,
+                      label: 'Change infor',
+                    ),
+                    SlidableAction(
+                      onPressed: (context) => (_deleteUser(index)),
+                      backgroundColor: Colors.red,
+                      icon: Icons.delete,
+                      label: 'Delete',
+                    ),
+                  ],
+                ),
 
-              child: ShowUsers(user: user),
-            );
-          },
+                child: ShowUsers(user: user),
+              );
+            },
+          ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ChangeUser(
+                index: indexUser,
+                userHomeData: users,
+              ),
+            ),
+          );
+        },
       ),
     );
   }

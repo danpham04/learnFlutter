@@ -23,5 +23,4 @@ class UserModel {
         dateOfBirth: map['dateOfBirth'],
         nationality: map['nationality']);
   }
-  
 }

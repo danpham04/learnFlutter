@@ -21,18 +21,18 @@ class _FeedState extends State<Feed> {
 
   final HomeService _homeService = HomeService();
 
+  @override
+  void initState() {
+    getData();
+    super.initState();
+  }
+
   void getData() async {
     final List<UserModel> loadUserTemp = await _homeService.getData();
 
     setState(() {
       _loadUser = loadUserTemp;
     });
-  }
-
-  @override
-  void initState() {
-    getData();
-    super.initState();
   }
 
   @override
@@ -51,19 +51,25 @@ class _FeedState extends State<Feed> {
 
               if (_loadUser.isNotEmpty) {
                 users = _loadUser[index];
-              }
 
-              return GestureDetector(
-                onTap: () {
-                  Navigator.of(context)
-                      .pushNamed(AppRoutes.userInformation, arguments: users);
-                },
-                child: SizedBox(
-                  width: 270,
-                  child: Image.asset(
-                    users.image ?? 'assets/images/hanam.jpg',
-                    fit: BoxFit.cover,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushNamed(AppRoutes.userInformation, arguments: users);
+                  },
+                  child: SizedBox(
+                    width: 270,
+                    child: Image.asset(
+                      users.image ?? '',
+                      fit: BoxFit.cover,
+                    ),
                   ),
+                );
+              }
+              return const Center(
+                child: Text(
+                  "Load Images.......!",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               );
             },
