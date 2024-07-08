@@ -69,7 +69,7 @@ class _FeedState extends State<Feed> {
               return const Center(
                 child: Text(
                   "Load Images.......!",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               );
             },

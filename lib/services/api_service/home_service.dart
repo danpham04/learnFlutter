@@ -31,29 +31,26 @@ class HomeService extends HomeRepository {
     }
   }
 
-  void create(UserModel newUser) async {
-    const uri = 'https://66879c080bc7155dc0185037.mockapi.io/users';
-    final response = await http.post(
-      Uri.parse(uri),
-      body: (newUser),
-    );
-
-    print(response.statusCode);
-  }
-
   @override
-  Future<UserModel> createData(newUser) async {
-    const uri = 'https://66879c080bc7155dc0185037.mockapi.io/users';
-    final response = await http.post(
-      Uri.parse(uri),
-      body: jsonEncode(newUser),
-    );
+  Future<UserModel> createData(UserModel newUser) async {
+    try {
+      const uri = 'https://66879c080bc7155dc0185037.mockapi.io/users';
+      http.Response response = await http.post(
+        Uri.parse(uri),
+        body: (newUser.toMap()),
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+      );
+      // print(jsonEncode(newUser.toMap()));
+      // print(response.statusCode);
 
-    if (response.statusCode == 201) {
-      final data = jsonDecode(response.body);
-      return UserModel.fromMap(data);
-    } else {
-      throw Exception('Failed to create user');
+      if (response.statusCode == 201) {
+        final data = jsonDecode(response.body);
+        return UserModel.fromMap(data);
+      } else {
+        throw Exception('Failed to create user');
+      }
+    } catch (e) {
+      rethrow;
     }
   }
 

@@ -1,6 +1,7 @@
 import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/change_users/change_user.dart';
 import 'package:chage_learn_flutter/screens/home/widget/show_user.dart';
+import 'package:chage_learn_flutter/screens/home/widget/update_user/update_user.dart';
 import 'package:chage_learn_flutter/services/api_service/home_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -120,12 +121,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.blue,
         onPressed: () {
           Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => ChangeUser(
-                index: indexUser,
-                userHomeData: users,
-              ),
-            ),
+            MaterialPageRoute(builder: (context) => const UpdateUser()),
           );
         },
       ),

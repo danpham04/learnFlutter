@@ -5,6 +5,7 @@ class UserModel {
   String? address;
   String? dateOfBirth;
   String? nationality;
+  // int? id;
 
   UserModel(
       {this.image,
@@ -12,15 +13,33 @@ class UserModel {
       this.mail,
       this.address,
       this.dateOfBirth,
-      this.nationality});
+      this.nationality,
+      // this.id
+      });
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-        image: map['imgavt'],
-        name: map['name'],
-        mail: map['mail'],
-        address: map['address'],
-        dateOfBirth: map['dateOfBirth'],
-        nationality: map['nationality']);
+      image: map['imgavt'],
+      name: map['name'],
+      mail: map['mail'],
+      address: map['address'],
+      dateOfBirth: map['dateOfBirth'],
+      nationality: map['nationality'],
+      // id: map['id']
+    );
   }
+
+ 
+  Map<String, dynamic> toMap() {
+    return {
+      'imgavt': image,
+      'name': name,
+      'mail': mail,
+      'address': address,
+      'dateOfBirth': dateOfBirth,
+      'nationality': nationality,
+      // 'id':id
+    };
+  }
+
 }

@@ -2,20 +2,21 @@ import 'package:chage_learn_flutter/model/user_model.dart';
 import 'package:chage_learn_flutter/screens/home/widget/change_users/textfile_add_user.dart';
 
 import 'package:chage_learn_flutter/screens/home/widget/text_infor.dart';
+import 'package:chage_learn_flutter/services/api_service/home_service.dart';
 import 'package:chage_learn_flutter/widgets/learn_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class ChangeUser extends StatefulWidget {
-  const ChangeUser(
-      {super.key, required this.index, required this.userHomeData});
-  final int index;
-  final UserModel userHomeData;
+class UpdateUser extends StatefulWidget {
+  const UpdateUser({
+    super.key,
+  });
 
   @override
-  State<ChangeUser> createState() => _ChangeUserState();
+  State<UpdateUser> createState() => _UpdateUserState();
 }
 
-class _ChangeUserState extends State<ChangeUser> {
+class _UpdateUserState extends State<UpdateUser> {
+  final HomeService _homeService = HomeService();
 
   late TextEditingController _controllerName;
   late TextEditingController _controllerGmail;
@@ -30,6 +31,7 @@ class _ChangeUserState extends State<ChangeUser> {
     _controllerAddress = TextEditingController();
     _controllerAge = TextEditingController();
     _controllerNationality = TextEditingController();
+
     super.initState();
   }
 
@@ -61,11 +63,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   textController: _controllerName,
                   labelText: "Nhập tên bạn muốn thay đổi",
                   hintText: 'Nhập tên',
-                  onChanged: (value) {
-                    setState(() {
-                      widget.userHomeData.name = _controllerName.text;
-                    });
-                  },
+                  onChanged: (value) {},
                 ),
               ),
               Padding(
@@ -74,11 +72,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   textController: _controllerGmail,
                   labelText: "Nhập gmail bạn muốn thay đổi",
                   hintText: 'Nhập gmail',
-                  onChanged: (value) {
-                    setState(() {
-                      widget.userHomeData.mail = _controllerGmail.text;
-                    });
-                  },
+                  onChanged: (value) {},
                 ),
               ),
               Padding(
@@ -87,11 +81,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   textController: _controllerAddress,
                   labelText: "Nhập địa chỉ bạn muốn thay đổi",
                   hintText: 'Nhập địa chỉ',
-                  onChanged: (value) {
-                    setState(() {
-                      widget.userHomeData.address = _controllerAddress.text;
-                    });
-                  },
+                  onChanged: (value) {},
                 ),
               ),
               Padding(
@@ -100,11 +90,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   textController: _controllerAge,
                   labelText: "Nhập ngày sinh bạn muốn thay đổi",
                   hintText: 'Nhập ngày sinh',
-                  onChanged: (value) {
-                    setState(() {
-                      widget.userHomeData.dateOfBirth = _controllerAge.text;
-                    });
-                  },
+                  onChanged: (value) {},
                 ),
               ),
               Padding(
@@ -113,12 +99,7 @@ class _ChangeUserState extends State<ChangeUser> {
                   textController: _controllerNationality,
                   labelText: "Nhập quốc tịch bạn muốn thay đổi",
                   hintText: 'Nhập quốc tịch',
-                  onChanged: (value) {
-                    setState(() {
-                      widget.userHomeData.nationality =
-                          _controllerNationality.text;
-                    });
-                  },
+                  onChanged: (value) {},
                 ),
               ),
               Padding(
@@ -128,21 +109,21 @@ class _ChangeUserState extends State<ChangeUser> {
                       backgroundColor:
                           const Color.fromARGB(255, 149, 196, 235)),
                   onPressed: () {
-                    Navigator.pop(context);
+                    UserModel newUser = UserModel(
+                      image: "assets/images/hanam.jpg",
+                      name: _controllerName.text,
+                      mail: _controllerGmail.text,
+                      address: _controllerAddress.text,
+                      dateOfBirth: _controllerAge.text,
+                      nationality: _controllerNationality.text,
+                      // id: int.parse(_controllerId.text),
+                    );
 
-                    // UserModel body = UserModel(
-                    //   image: "assets/images/hanam.jpg",
-                    //   name: _controllerName.text,
-                    //   mail: _controllerGmail.text,
-                    //   address: _controllerAddress.text,
-                    //   dateOfBirth: _controllerAge.text,
-                    //   nationality: _controllerNationality.text,
-                    // );
-                    // // _homeService.createData(body);
-                    // _homeService.createData(body);
+                    _homeService.createData(newUser);
+                    Navigator.pop(context);
                   },
                   child: const TextInfor(
-                    text: 'Thay đổi tài khoản',
+                    text: 'Thêm tài khoản',
                     colorText: Colors.black,
                   ),
                 ),
