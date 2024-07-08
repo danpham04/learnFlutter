@@ -1,76 +1,74 @@
-{
-    "data": [
-        {
-            "imgavt": "assets/images/ctv.png",
-            "name": "Nguyen van A",
-            "mail": "NguyenA@gmail.co",
-            "address": "Nam Dinh",
-            "dateOfBirth": "25/9/2004",
-            "nationality": "Viet Nam"
-        },
-        {
-            "imgavt": "assets/images/hanam.jpg",
-            "name": "Nguyen Thi A",
-            "mail": "NguyenAnh@gmail.com",
-            "address": "Nam Dinh",
-            "dateOfBirth": "25/9/2004",
-            "nationality": "Viet Nam"
-        },
-        {
-            "imgavt": "assets/images/hotay.jpg",
-            "name": "Ngo Hoang Ma",
-            "mail": "NGoMai@gmail.com",
-            "address": "Nam Dinh",
-            "dateOfBirth": "25/95/2004",
-            "nationality": "Viet Nam"
-        },
-        {
-            "imgavt": "assets/images/sontay.jpg",
-            "name": "Hoang Van T",
-            "mail": "HoangT@gmail.com",
-            "address": "Nam Dinh",
-            "dateOfBirth": "25/95/2004",
-            "nationality": "Viet Nam"
-        },
-        {
-            "imgavt": "assets/images/hanam.jpg",
-            "name": "Mai Hong A",
-            "mail": "MaiA@gmail.com",
-            "address": "Nam Dinh",
-            "dateOfBirth": "25/5/2004",
-            "nationality": "Viet Nam"
-        },
-        {
-            "imgavt": "assets/images/ctv.png",
-            "name": "Nguyen Hong ",
-            "mail": "NhongA@gmail.com",
-            "address": "Nam Dinh",
-            "dateOfBirth": "25/9/2004",
-            "nationality": "Viet Nam"
-        },
-        {
-            "imgavt": "assets/images/ctv.png",
-            "name": "Tran Van B",
-            "mail": "TranB@gmail.com",
-            "addres": "Nam Dinh",
-            "dateOfBirth": "25/5/2004",
-            "nationality": "Viet Nam"
-        },
-        {
-            "imgavt": "assets/images/hanam.jpg",
-            "name": "Nguyen van B",
-            "mail": "NguyenB@gmail.com",
-            "address": "Nam Dinh",
-            "dateOfBirth": "25/95/2004",
-            "nationality": "Viet Nam"
-        },
-        {
-            "imgavt": "assets/images/tang.jpg",
-            "name": "Pham van A",
-            "mail": "PhamVanA@gmail.com",
-            "addres": "Nam Dinh",
-            "dateOfBirth": "25/9/2004",
-            "nationality": "Viet Nam"
-        }
-    ]
-}
+[
+    {
+        "imgavt": "assets/images/ctv.png",
+        "name": "Nguyen van A",
+        "mail": "NguyenA@gmail.co",
+        "address": "Nam Dinh",
+        "dateOfBirth": "25/9/2004",
+        "nationality": "Viet Nam"
+    },
+    {
+        "imgavt": "assets/images/hanam.jpg",
+        "name": "Nguyen Thi A",
+        "mail": "NguyenAnh@gmail.com",
+        "address": "Nam Dinh",
+        "dateOfBirth": "25/9/2004",
+        "nationality": "Viet Nam"
+    },
+    {
+        "imgavt": "assets/images/hotay.jpg",
+        "name": "Ngo Hoang Ma",
+        "mail": "NGoMai@gmail.com",
+        "address": "Nam Dinh",
+        "dateOfBirth": "25/95/2004",
+        "nationality": "Viet Nam"
+    },
+    {
+        "imgavt": "assets/images/sontay.jpg",
+        "name": "Hoang Van T",
+        "mail": "HoangT@gmail.com",
+        "address": "Nam Dinh",
+        "dateOfBirth": "25/95/2004",
+        "nationality": "Viet Nam"
+    },
+    {
+        "imgavt": "assets/images/hanam.jpg",
+        "name": "Mai Hong A",
+        "mail": "MaiA@gmail.com",
+        "address": "Nam Dinh",
+        "dateOfBirth": "25/5/2004",
+        "nationality": "Viet Nam"
+    },
+    {
+        "imgavt": "assets/images/ctv.png",
+        "name": "Nguyen Hong ",
+        "mail": "NhongA@gmail.com",
+        "address": "Nam Dinh",
+        "dateOfBirth": "25/9/2004",
+        "nationality": "Viet Nam"
+    },
+    {
+        "imgavt": "assets/images/ctv.png",
+        "name": "Tran Van B",
+        "mail": "TranB@gmail.com",
+        "addres": "Nam Dinh",
+        "dateOfBirth": "25/5/2004",
+        "nationality": "Viet Nam"
+    },
+    {
+        "imgavt": "assets/images/hanam.jpg",
+        "name": "Nguyen van B",
+        "mail": "NguyenB@gmail.com",
+        "address": "Nam Dinh",
+        "dateOfBirth": "25/95/2004",
+        "nationality": "Viet Nam"
+    },
+    {
+        "imgavt": "assets/images/tang.jpg",
+        "name": "Pham van A",
+        "mail": "PhamVanA@gmail.com",
+        "addres": "Nam Dinh",
+        "dateOfBirth": "25/9/2004",
+        "nationality": "Viet Nam"
+    }
+]
