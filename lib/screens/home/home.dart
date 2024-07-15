@@ -17,12 +17,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<UserModel> _loadUser = [];
-
   final HomeService _homeService = HomeService();
   int indexUser = 0;
-  final UserModel users = UserModel();
-  void getData() async {
+  // final UserModel users = UserModel();
+  Future<void> getData() async {
     final List<UserModel> loadUserTemp = await _homeService.getData();
+
     setState(() {
       _loadUser = loadUserTemp;
     });
@@ -30,30 +30,19 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-    getData();
+    didChangeDependencies();
     super.initState();
   }
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  void _deleteUser(int index) {
-    setState(() {
-      _loadUser.removeAt(index);
-    });
-  }
-
-  void _updateUser(int index, UserModel newUser) {
-    setState(() {
-      _loadUser[index] = newUser;
-    });
+  void didChangeDependencies() {
+    getData();
+    super.didChangeDependencies();
   }
 
   @override
   Widget build(BuildContext context) {
-    // readData();
+    // getData();
     return Scaffold(
       body: SlidableAutoCloseBehavior(
         closeWhenOpened: true, // khi kéo item này item khác đóng lại
@@ -103,7 +92,9 @@ class _HomeState extends State<Home> {
                       label: 'Change infor',
                     ),
                     SlidableAction(
-                      onPressed: (context) => (_deleteUser(index)),
+                      onPressed: (context) {
+                        _homeService.deleteData("${index + 1}");
+                      },
                       backgroundColor: Colors.red,
                       icon: Icons.delete,
                       label: 'Delete',

@@ -5,7 +5,7 @@ class UserModel {
   String? address;
   String? dateOfBirth;
   String? nationality;
-  // int? id;
+  String? id;
 
   UserModel(
       {this.image,
@@ -14,7 +14,7 @@ class UserModel {
       this.address,
       this.dateOfBirth,
       this.nationality,
-      // this.id
+      this.id
       });
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
@@ -25,7 +25,7 @@ class UserModel {
       address: map['address'],
       dateOfBirth: map['dateOfBirth'],
       nationality: map['nationality'],
-      // id: map['id']
+      id: map['id']
     );
   }
 
@@ -38,7 +38,7 @@ class UserModel {
       'address': address,
       'dateOfBirth': dateOfBirth,
       'nationality': nationality,
-      // 'id':id
+      'id':id
     };
   }
 

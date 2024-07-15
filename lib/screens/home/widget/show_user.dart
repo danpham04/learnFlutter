@@ -14,7 +14,7 @@ class ShowUsers extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: ClipOval(
-        child: Image.asset(
+        child: Image.network(
           user.image??'',
           width: 50,
           height: 50,

@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 class UpdateUser extends StatefulWidget {
   const UpdateUser({
-    super.key,
+    super.key
   });
 
   @override
@@ -23,6 +23,7 @@ class _UpdateUserState extends State<UpdateUser> {
   late TextEditingController _controllerAddress;
   late TextEditingController _controllerAge;
   late TextEditingController _controllerNationality;
+  late TextEditingController _controllerId;
 
   @override
   void initState() {
@@ -31,6 +32,7 @@ class _UpdateUserState extends State<UpdateUser> {
     _controllerAddress = TextEditingController();
     _controllerAge = TextEditingController();
     _controllerNationality = TextEditingController();
+    _controllerId = TextEditingController();
 
     super.initState();
   }
@@ -43,6 +45,7 @@ class _UpdateUserState extends State<UpdateUser> {
     _controllerAddress.dispose();
     _controllerAge.dispose();
     _controllerNationality.dispose();
+    _controllerId.dispose();
   }
 
   @override
@@ -102,6 +105,15 @@ class _UpdateUserState extends State<UpdateUser> {
                   onChanged: (value) {},
                 ),
               ),
+               Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextfileAddUser(
+                  textController: _controllerId,
+                  labelText: "Nhập id của bạn ",
+                  hintText: 'Nhập id',
+                  onChanged: (value) {},
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
@@ -110,17 +122,18 @@ class _UpdateUserState extends State<UpdateUser> {
                           const Color.fromARGB(255, 149, 196, 235)),
                   onPressed: () {
                     UserModel newUser = UserModel(
-                      image: "assets/images/hanam.jpg",
+                      image: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/877.jpg",
                       name: _controllerName.text,
                       mail: _controllerGmail.text,
                       address: _controllerAddress.text,
                       dateOfBirth: _controllerAge.text,
                       nationality: _controllerNationality.text,
-                      // id: int.parse(_controllerId.text),
+                      id: _controllerId.text,
                     );
 
                     _homeService.createData(newUser);
                     Navigator.pop(context);
+                    
                   },
                   child: const TextInfor(
                     text: 'Thêm tài khoản',

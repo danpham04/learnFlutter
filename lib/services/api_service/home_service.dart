@@ -16,7 +16,7 @@ class HomeService extends HomeRepository {
       // final user = data;
       // final users = user as List<dynamic>;
 
-      const uri = 'https://66879c080bc7155dc0185037.mockapi.io/users';
+      const uri = "https://66879c080bc7155dc0185037.mockapi.io/datauser";
       final response = await http.get(Uri.parse(uri));
       final data = jsonDecode(response.body);
       final users = data as List<dynamic>;
@@ -34,7 +34,7 @@ class HomeService extends HomeRepository {
   @override
   Future<UserModel> createData(UserModel newUser) async {
     try {
-      const uri = 'https://66879c080bc7155dc0185037.mockapi.io/users';
+      const uri = "https://66879c080bc7155dc0185037.mockapi.io/datauser";
       http.Response response = await http.post(
         Uri.parse(uri),
         body: (newUser.toMap()),
@@ -55,8 +55,22 @@ class HomeService extends HomeRepository {
   }
 
   @override
-  Future<UserModel> deleteData() {
-    throw UnimplementedError();
+  Future<bool> deleteData(String id) async {
+    try {
+      final response = await http.delete(
+        Uri.parse("https://66879c080bc7155dc0185037.mockapi.io/datauser/$id"),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      );
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        throw Exception('Failed to delete user');
+      }
+    } catch (e) {
+      rethrow;
+    }
   }
 
   @override

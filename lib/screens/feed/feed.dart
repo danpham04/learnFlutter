@@ -59,7 +59,7 @@ class _FeedState extends State<Feed> {
                   },
                   child: SizedBox(
                     width: 270,
-                    child: Image.asset(
+                    child: Image.network(
                       users.image ?? '',
                       fit: BoxFit.cover,
                     ),

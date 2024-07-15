@@ -6,7 +6,7 @@ abstract class HomeRepository{
 
   Future<List<UserModel>> searchData();
 
-  Future<UserModel> deleteData();
+  Future<bool> deleteData(String id);
 
   Future<UserModel> updateData();
 

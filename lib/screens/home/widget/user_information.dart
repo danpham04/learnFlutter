@@ -24,7 +24,7 @@ class UserInformation extends StatelessWidget {
             child: Row(
               children: [
                 ClipOval(
-                  child: Image.asset(
+                  child: Image.network(
                     user.image??'',
                     width: 70,
                     height: 70,
